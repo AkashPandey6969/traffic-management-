@@ -189,8 +189,6 @@ def help_menu():
             print("\nVehicle Recording Help:\nYou can add, search, or manage vehicle records easily through the system.")
         elif choice == '2':
             print("\nfine Recording Help:\nThis feature allows you to manage traffic fines.")
-        elif choice == '3':
-            print("\nTraffic Control Booths Help:\nSearch for details about traffic control booths in your area or add new ones.")
         elif choice == '0':
             break
         else:
