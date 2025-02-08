@@ -13,9 +13,8 @@ def welcome_screen():
         print("1. Record New Vehicles")
         print("2. Get Record of Fine")
         print("3. Search Record of Vehicles")
-        print("4. Search Traffic Control Booths")
-        print("5. Control the Traffic")
-        print("6. HELP")
+        print("4. Control the Traffic")
+        print("5. HELP")
         print("0. Exit")
         choice = input("Please enter your desired choice: ")
 
@@ -26,10 +25,8 @@ def welcome_screen():
         elif choice == '3':
             search_vehicles()
         elif choice == '4':
-            search_traffic_booths()
-        elif choice == '5':
             control_traffic()
-        elif choice == '6':
+        elif choice == '5':
             help_menu()
         elif choice == '0':
             print("Exiting the system. Goodbye!")
@@ -43,20 +40,11 @@ def record_new_vehicles():
         print("\n" + "-" * 50)
         print("----Record of Vehicles----")
         print("1. Add a New Vehicle")
-        print("2. Search for a Vehicle Using Registration Number")
-        print("3. Search by Owner's Name")
-        print("4. Search by phone number")
         print("0. Return to Main Menu")
         choice = input("Please enter your desired choice: ")
 
         if choice == '1':
             add_new_vehicle()
-        elif choice == '2':
-            search_vehicle_by_reg_number()
-        elif choice == '3':
-            search_vehicle_by_owner_name()
-        elif choice =='4':
-            search_vehicle_by_phone_number()
         elif choice == '0':
             break
         else:
@@ -139,32 +127,6 @@ def search_traffic_booths():
     else:
         print("Invalid choice! Please try again.")
 
-def search_booth_by_id():
-    """Search traffic booth by ID."""
-    booth_id = input("Enter Traffic Control Booth ID: ")
-    for booth in traffic_booths:
-        if booth["booth_id"] == booth_id:
-            print(f"Booth Found:\nBooth ID: {booth['booth_id']}\nLocation: {booth['location']}\nContact Info: {booth['contact_info']}")
-            return
-    print("No traffic booth found with the given ID.")
-
-def search_booth_by_location():
-    """Search traffic booth by location."""
-    location = input("Enter booth location: ")
-    for booth in traffic_booths:
-        if location.lower() in booth["location"].lower():
-            print(f"Booth Found:\nBooth ID: {booth['booth_id']}\nLocation: {booth['location']}\nContact Info: {booth['contact_info']}")
-            return
-    print("No traffic booth found at the given location.")
-
-def add_new_booth():
-    """Add a new traffic control booth."""
-    booth_id = input("Enter Traffic Control Booth ID: ")
-    location = input("Enter booth location: ")
-    contact_info = input("Enter contact information for the booth: ")
-    traffic_booths.append({"booth_id": booth_id, "location": location, "contact_info": contact_info})
-    print("Traffic Control Booth added successfully!")
-
 def control_traffic():
     """Manage traffic signals and report traffic conditions."""
     while True:
@@ -226,7 +188,7 @@ def help_menu():
         if choice == '1':
             print("\nVehicle Recording Help:\nYou can add, search, or manage vehicle records easily through the system.")
         elif choice == '2':
-            print("\nChallan Recording Help:\nThis feature allows you to manage traffic fines.")
+            print("\nfine Recording Help:\nThis feature allows you to manage traffic fines.")
         elif choice == '3':
             print("\nTraffic Control Booths Help:\nSearch for details about traffic control booths in your area or add new ones.")
         elif choice == '0':
